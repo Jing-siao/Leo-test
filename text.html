@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
 <body>
     <header>
         <div class="container-fluid">
-            <div class="row" id="app">
+            <div class="row header" id="app">
                 <div class="col">
                     <!-- 漢堡按鈕 -->
                     <button class="hamburger hamburger--squeeze" type="button" @click="active">
@@ -51,27 +51,53 @@
 
     </header>
     <!-- 輪播 -->
-    <div class="banner">
+    <div class="banner" id="banner">
+        <div class="row">
+            <div class="arrow-pre" @click="changeIndex(-1)" v-if="index > 0">
+                <div class="pre"></div>
+            </div>
+            <transition name="fade" mode="out-in">
+                <div class="pic" v-for="(item,i) in banner" v-if="index ===i" :key="item.title">
+                    <!-- 這裡的bannerIndex原先是banner[index],因把變數寫在computed -->
+                    <a :href="item.link">
+
+                        <img :src="item.src" alt="">
+                        <span class="number">{{index+1}}</span>
+                        <p>{{item.title}}</p>
+                    </a>
+                </div>
+            </transition>
+
+            <div class="arrow-nex" @click="changeIndex(1)" v-if="index < total-1">
+
+                <div class="nex"></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div>
         <!-- <div class="owl-carousel owl-theme">
-            <div class="item">
-                <h4>1</h4>
-            </div>
-            <div class="item">
-                <h4>2</h4>
-            </div>
-            <div class="item">
-                <h4>3</h4>
-            </div>
-            <div class="item">
-                <h4>4</h4>
-            </div>
-            <div class="item">
-                <h4>5</h4>
-            </div>
+                        <div class="item">
+                            <h4>1</h4>
+                        </div>
+                        <div class="item">
+                            <h4>2</h4>
+                        </div>
+                        <div class="item">
+                            <h4>3</h4>
+                        </div>
+                        <div class="item">
+                            <h4>4</h4>
+                        </div>
+                        <div class="item">
+                            <h4>5</h4>
+                        </div>
             
-
-        </div> -->
-
+            
+                    </div> -->
     </div>
     <footer>
         <div id="footer">

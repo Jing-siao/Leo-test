@@ -1,4 +1,5 @@
 let data = {
+  index: 0,
   menu: [
     {
       title: '活動辦法',
@@ -24,18 +25,48 @@ let data = {
       title: '交通優惠',
       link: 'javascript:;',
     },
-  ]
+  ],
+  banner: [
+    {
+      title: '活動一',
+      src: 'https://picsum.photos/seed/picsum/600/300',
+      link: 'javascript:;',
+    },
+    {
+      title: '活動二',
+      src: "http://fakeimg.pl/600x300/282828/ccc/",
+      link: 'javascript:;',
+
+    },
+    {
+      title: '活動三',
+      src: "http://fakeimg.pl/600x300/aaa/ccc/",
+      link: 'javascript:;',
+
+    },
+    {
+      title: '活動四',
+      src: "http://fakeimg.pl/600x300/282828/ccc/",
+      link: 'javascript:;',
+
+    },
+    {
+      title: '活動五',
+      src: "http://fakeimg.pl/600x300/bbb/ccc/",
+      link: 'javascript:;',
+
+    },
+
+  ],
 };
 
-let vm = new Vue({
+let header = new Vue({
   el: '#app',
   data: data,
   methods: {
     active() {
 
       $("button.hamburger").toggleClass("is-active");
-      // $(".menu").show();
-      // $(".menu").slideToggle(1000, easing);
       $(".menu").slideToggle();
 
     },
@@ -43,7 +74,7 @@ let vm = new Vue({
   mounted() {
     // rwd
     // 一進來先判斷
-    if ($(window).width() <= 1140) {
+    if ($(window).width() < 720) {
 
       $('.member span p').hide();
     } else {
@@ -51,7 +82,7 @@ let vm = new Vue({
     };
     // resize再判斷一次
     $(window).resize(function () {
-      if ($(window).width() <= 1140) {
+      if ($(window).width() < 720) {
         $('.member span p').hide();
       } else {
         $('.member span p').show();
@@ -76,4 +107,23 @@ let vm = new Vue({
       }
     });
   },
+});
+
+let banner = new Vue({
+  el: '#banner',
+  data: data,
+  computed: {
+    bannerIndex() {
+      return this.banner[this.index]
+    },
+    total() {
+      return this.banner.length
+    }
+  },
+  methods: {
+    changeIndex(change) {
+      let length = this.banner.length;
+      this.index = (this.index + change + length) % length;
+    }
+  }
 });

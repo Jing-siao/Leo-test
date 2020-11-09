@@ -3,18 +3,18 @@
 }
 
 header {
-  background-color: #a2e8eb;
+  background-color: lightgrey;
   width: 100%;
-  padding: 8px 0;
-  height: 90px;
+  padding: 6px 0;
+  height: 85px;
 }
 
-header .row {
-  border: 1px solid blue;
+header div.header {
   margin: 0 auto;
+  width: 100%;
 }
 
-header .row div.col {
+header div.header div.col {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,104 +25,131 @@ header .row div.col {
   max-height: 70px;
 }
 
-header .row div.col #logo {
+header div.header div.col #logo {
   display: inline-block;
   height: 68px;
 }
 
-header .row div.col #logo a {
+header div.header div.col #logo a {
   display: inline-block;
   height: 100%;
   width: auto;
 }
 
-header .row div.col #logo a img {
+header div.header div.col #logo a img {
   height: 100%;
 }
 
-header .row div.col ul.menu {
+header div.header div.col ul.menu {
   border: 1px solid red;
 }
 
-header .row div.col ul.menu a {
-  display: inline-block;
-  border: 1px solid black;
+header div.header div.col ul.menu a {
+  border: 1px solid #4dd854;
 }
 
-header .row div.col ul.menu a li {
+header div.header div.col ul.menu a li {
   display: inline-block;
 }
 
-header .row div.col div.member a {
+header div.header div.col div.member a {
   border: 1px solid blue;
   display: inline-block;
-  margin: 8px 0 0 15px;
+  margin: 13px 0 0 15px;
   text-decoration: none;
 }
 
-header .row div.col div.member a span {
+header div.header div.col div.member a span {
   border: 1px solid #e03939;
-  padding: 8px;
+  padding: 5px;
   display: inline-block;
   line-height: 30px;
 }
 
-header .row div.col div.member a span i {
+header div.header div.col div.member a span i {
   display: inline-block;
   font-size: 30px;
+  vertical-align: top;
 }
 
-header .row div.col div.member a span p {
+header div.header div.col div.member a span p {
   display: inline-block;
   margin-left: 5px;
   vertical-align: top;
 }
 
-header .row div.col button.hamburger {
+header div.header div.col button.hamburger {
   outline: none;
   border: 1px solid black;
 }
 
 div.banner {
-  border: 1px solid black;
+  border: 1px solid #db3c3c;
 }
 
-div.banner .owl-carousel {
-  border: 1px solid black;
+div.banner .row {
+  margin: 0 auto;
   position: relative;
 }
 
-div.banner .owl-carousel .owl-stage {
-  display: inline-block;
-}
-
-div.banner .owl-carousel .owl-stage .owl-next,
-div.banner .owl-carousel .owl-stage .owl-prev {
-  width: 22px;
-  height: 40px;
-  margin-top: -20px;
+div.banner .row div.arrow-pre {
+  border: 1px solid blue;
   position: absolute;
-  top: 50%;
+  top: 30%;
+  padding: 5px;
+  cursor: pointer;
+  left: 2%;
 }
 
-div.banner .owl-carousel .owl-stage .owl-prev {
-  left: 10px;
+div.banner .row div.arrow-pre .pre {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 22.5px 13px 0;
+  border-color: transparent #ccc transparent transparent;
 }
 
-div.banner .owl-carousel .owl-stage .owl-next {
-  right: 10px;
+div.banner .row div.arrow-nex {
+  right: 2%;
+  border: 1px solid blue;
+  position: absolute;
+  top: 30%;
+  padding: 5px;
+  cursor: pointer;
 }
 
-div.banner .owl-carousel .owl-stage .item {
-  background: #0c83e7;
-  margin: 5px;
-  color: #FFF;
-  border-radius: 3px;
+div.banner .row div.arrow-nex .nex {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 0 13px 22.5px;
+  border-color: transparent transparent transparent #ccc;
+}
+
+div.banner .row div.pic {
+  border: 1px solid blue;
+  display: inline-block;
+  width: 100%;
   text-align: center;
 }
 
-div.banner .owl-carousel .owl-stage .item h1 {
-  font-size: 18px;
+div.banner .row div.pic .fade-enter,
+div.banner .row div.pic .fade-leave-to {
+  opacity: 0;
+}
+
+div.banner .row div.pic .fade-enter-active,
+div.banner .row div.pic .fade-leave-active {
+  opacity: 1;
+}
+
+div.banner .row div.pic a {
+  display: inline-block;
+  width: 100%;
+}
+
+div.banner .row div.pic a img {
+  width: 100%;
 }
 
 footer {
@@ -149,6 +176,7 @@ footer {
   .row div.col ul.menu a {
     margin: 0 5px;
     line-height: 66px;
+    display: inline-block;
   }
   .row div.col ul.menu a li {
     display: inline-block;
@@ -186,30 +214,36 @@ footer {
   }
   .row div.col ul.menu {
     display: none;
-    height: calc(100vh-70px);
     position: absolute;
-    width: 100%;
+    margin-left: -15px;
+    top: 80px;
+    width: calc(100vw - 15px);
     z-index: 1;
+    padding: 0;
+    height: calc(100vh - 80px);
     overflow-y: scroll;
-    background-color: #0c83e7;
+    background-color: lightgrey;
+  }
+  .row div.col ul.menu::-webkit-scrollbar {
+    display: none;
   }
   .row div.col ul.menu a {
     width: 100%;
+    display: block;
     text-align: center;
     padding: 0;
   }
   .row div.col ul.menu a li {
     padding: 15px;
     width: 100%;
-    height: 100%;
-    background-color: #0c83e7;
+    background-color: lightgrey;
   }
   .row div.col div.member a span p {
     display: none;
   }
   .row div.col button.hamburger {
     display: inline-block;
-    padding: 5px;
+    padding: 0 5px;
   }
 }
 /*# sourceMappingURL=text.css.map */
