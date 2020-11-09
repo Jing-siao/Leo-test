@@ -3,7 +3,7 @@
 }
 
 header {
-  background-color: lightblue;
+  background-color: #644ca5;
   width: 100%;
   padding: 8px 0;
   height: 90px;
@@ -167,7 +167,6 @@ footer {
     width: 100%;
   }
   .row div.col {
-    background-color: #6678cc;
     display: block;
     height: 100vh;
     position: relative;
