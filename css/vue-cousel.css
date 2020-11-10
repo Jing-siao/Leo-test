@@ -1,0 +1,67 @@
+@charset "UTF-8";
+.row {
+  margin: 0 auto;
+  position: relative;
+  /* 左右箭頭 */
+}
+
+.row div.arrow-pre {
+  border: 1px solid blue;
+  position: absolute;
+  top: 30%;
+  padding: 5px;
+  cursor: pointer;
+  left: 2%;
+}
+
+.row div.arrow-pre .pre {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 22.5px 13px 0;
+  border-color: transparent #ccc transparent transparent;
+}
+
+.row div.arrow-nex {
+  right: 2%;
+  border: 1px solid blue;
+  position: absolute;
+  top: 30%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.row div.arrow-nex .nex {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 0 13px 22.5px;
+  border-color: transparent transparent transparent #ccc;
+}
+
+.row div.pic {
+  border: 1px solid blue;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.row div.pic .fade-enter,
+.row div.pic .fade-leave-to {
+  opacity: 0;
+}
+
+.row div.pic .fade-enter-active,
+.row div.pic .fade-leave-active {
+  opacity: 1;
+}
+
+.row div.pic a {
+  display: inline-block;
+  width: 100%;
+}
+
+.row div.pic a img {
+  width: 100%;
+}
+/*# sourceMappingURL=vue-cousel.css.map */

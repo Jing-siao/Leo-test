@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./bootstrap/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="./css/vue-cousel.css">
+</head>
+
+<body>
+  <div class="banner" id="banner">
+    <div class="row slider">
+      <div class="arrow-pre" @click="changeIndex(-1)" v-if="index > 0">
+        <div class="pre"></div>
+      </div>
+      <transition name="fade" mode="out-in">
+        <div class="pic" v-for="(item,i) in banner" v-if="index ===i" :key="item.title">
+          <!-- 這裡的bannerIndex原先是banner[index],因把變數寫在computed -->
+          <a :href="item.link">
+
+            <img :src="item.src" alt="">
+            <span class="number">{{index+1}}</span>
+            <p>{{item.title}}</p>
+          </a>
+        </div>
+      </transition>
+
+      <div class="arrow-nex" @click="changeIndex(1)" v-if="index < total-1">
+
+        <div class="nex"></div>
+      </div>
+
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+  <script>
+    let data = {
+      index: 0,
+      menu: [
+        {
+          title: '活動辦法',
+          link: 'javascript:;',
+        },
+        {
+          title: '兌換專區',
+          link: 'javascript:;',
+        },
+        {
+          title: '常見問題',
+          link: 'javascript:;',
+        },
+        {
+          title: '會員專區',
+          link: 'javascript:;',
+        },
+        {
+          title: '卡友專區',
+          link: 'javascript:;',
+        },
+        {
+          title: '交通優惠',
+          link: 'javascript:;',
+        },
+      ],
+      banner: [
+        {
+          title: '活動一',
+          src: 'https://picsum.photos/seed/picsum/600/300',
+          link: 'javascript:;',
+        },
+        {
+          title: '活動二',
+          src: "http://fakeimg.pl/600x300/282828/ccc/",
+          link: 'javascript:;',
+
+        },
+        {
+          title: '活動三',
+          src: "http://fakeimg.pl/600x300/aaa/ccc/",
+          link: 'javascript:;',
+
+        },
+        {
+          title: '活動四',
+          src: "http://fakeimg.pl/600x300/282828/ccc/",
+          link: 'javascript:;',
+
+        },
+        {
+          title: '活動五',
+          src: "http://fakeimg.pl/600x300/bbb/ccc/",
+          link: 'javascript:;',
+
+        },
+
+      ],
+    };
+    let banner = new Vue({
+      el: '#banner',
+      data: data,
+      computed: {
+        bannerIndex() {
+          return this.banner[this.index]
+        },
+        total() {
+          return this.banner.length
+        }
+      },
+      methods: {
+        changeIndex(change) {
+          let length = this.banner.length;
+          this.index = (this.index + change + length) % length;
+        }
+      },
+    });
+  </script>
+</body>
+
+</html>

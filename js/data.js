@@ -89,23 +89,6 @@ let header = new Vue({
       };
 
     });
-
-    $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 3
-        },
-        1000: {
-          items: 5
-        }
-      }
-    });
   },
 });
 
@@ -125,5 +108,48 @@ let banner = new Vue({
       let length = this.banner.length;
       this.index = (this.index + change + length) % length;
     }
-  }
+  },
+  mounted() {
+    //輪播
+    $('.slider').slick({
+      dots: true,
+      infinite: true,
+      arrows: true,
+      // speed: 300,
+      autoplaySpeed: 2000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      responsive: [
+        // {
+        //   breakpoint: 1024,
+        //   settings: {
+        //     slidesToShow: 3,
+        //     slidesToScroll: 1,
+        //   }
+        // },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+          }
+        },
+      ]
+    });
+
+  },
 });
+; (function () {
+  new Vue({
+    el: "#footer",
+    data: {
+      copyright: 'All Rights Reserved.',
+      company: '台新國際商業銀行',
+      companyEn: 'Taishin International Bank.',
+      year: '©' + new Date().getFullYear(),
+
+
+    },
+  });
+})()

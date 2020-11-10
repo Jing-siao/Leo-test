@@ -1,0 +1,76 @@
+   @mixin arrowPosition {
+     border: 1px solid blue;
+     position: absolute;
+     top: 30%;
+     padding: 5px;
+     cursor: pointer;
+   }
+
+   @mixin arrow() {
+     width: 0;
+     height: 0;
+     border-style: solid;
+
+   }
+
+   $grey:#ccc;
+
+   .row {
+     margin: 0 auto;
+     position: relative;
+
+     /* 左右箭頭 */
+     div.arrow-pre {
+       @include arrowPosition();
+       left: 2%;
+
+       .pre {
+         @include arrow();
+         border-width: 13px 22.5px 13px 0;
+         border-color: transparent $grey transparent transparent;
+
+
+       }
+
+     }
+
+     div.arrow-nex {
+       right: 2%;
+       @include arrowPosition();
+
+       .nex {
+         @include arrow();
+         border-width: 13px 0 13px 22.5px;
+         border-color: transparent transparent transparent $grey;
+
+       }
+
+     }
+
+     div.pic {
+       border: 1px solid blue;
+       display: inline-block;
+       width: 100%;
+       text-align: center;
+
+       .fade-enter,
+       .fade-leave-to {
+         opacity: 0;
+       }
+
+       .fade-enter-active,
+       .fade-leave-active {
+         opacity: 1;
+       }
+
+       a {
+         display: inline-block;
+         width: 100%;
+
+         img {
+           width: 100%;
+
+         }
+       }
+     }
+   }

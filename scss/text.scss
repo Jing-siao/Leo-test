@@ -2,22 +2,13 @@
   padding: 0;
 }
 
+body {
+  background-color: rgb(72, 109, 106);
+}
+
 $grey:#ccc;
 
-@mixin arrowPosition {
-  border: 1px solid blue;
-  position: absolute;
-  top: 30%;
-  padding: 5px;
-  cursor: pointer;
-}
 
-@mixin arrow() {
-  width: 0;
-  height: 0;
-  border-style: solid;
-
-}
 
 header {
   background-color: lightgrey;
@@ -135,112 +126,42 @@ header {
 div.banner {
   border: 1px solid rgb(219, 60, 60);
 
-  .row {
+  .slider {
     margin: 0 auto;
-    position: relative;
+    border: 1px solid snow;
 
-    // 左右箭頭
-    div.arrow-pre {
-      @include arrowPosition();
+    button.slick-prev {
       left: 2%;
-
-      .pre {
-        @include arrow();
-        border-width: 13px 22.5px 13px 0;
-        border-color: transparent $grey transparent transparent;
-
-
-      }
-
+      z-index: 1;
+      // border: 1px solid white;
+      // padding: 5px;
+      // display: inline-block;
     }
 
-    div.arrow-nex {
+    button.slick-next {
       right: 2%;
-      @include arrowPosition();
-
-      .nex {
-        @include arrow();
-        border-width: 13px 0 13px 22.5px;
-        border-color: transparent transparent transparent $grey;
-
-      }
-
     }
 
-    div.pic {
-      border: 1px solid blue;
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-
-      .fade-enter,
-      .fade-leave-to {
-        opacity: 0;
-      }
-
-      .fade-enter-active,
-      .fade-leave-active {
-        opacity: 1;
-      }
+    .pic {
+      padding: 0;
 
       a {
+        border: 1px solid pink;
         display: inline-block;
+        text-align: center;
         width: 100%;
+        margin: 0 auto;
 
         img {
           width: 100%;
-
         }
       }
     }
+
   }
 
 
 
-  //貓頭鷹套件
-
-  // .owl-carousel {
-  //   border: 1px solid black;
-  //   position: relative;
-
-  //   .owl-stage {
-  //     display: inline-block;
-  //     border: 1px solid blue;
-
-  //     .owl-next,
-  //     .owl-prev {
-  //       width: 22px;
-  //       height: 40px;
-  //       margin-top: -20px;
-  //       position: absolute;
-  //       top: 50%;
-  //     }
-
-  //     .owl-prev {
-  //       left: 10px;
-  //     }
-
-  //     .owl-next {
-  //       right: 10px;
-  //     }
-
-  //     .item {
-  //       background: #0c83e7;
-  //       // padding: 80px 0px;
-  //       margin: 5px;
-  //       color: #FFF;
-  //       -webkit-border-radius: 3px;
-  //       -moz-border-radius: 3px;
-  //       border-radius: 3px;
-  //       text-align: center;
-
-  //       h1 {
-  //         font-size: 18px;
-  //       }
-  //     }
-
-  //   }
-  // }
 }
 
 footer {
@@ -249,7 +170,7 @@ footer {
 }
 
 @media (min-width:1141px) {
-  .row {
+  .header {
     width: 95%;
 
     div.col {
@@ -289,7 +210,7 @@ footer {
 }
 
 @media (max-width:1140px) {
-  .row {
+  .header {
     width: 100%;
 
     div.col {
@@ -326,7 +247,7 @@ footer {
         margin-left: -15px;
         top: 80px;
         width: calc(100vw - 15px);
-        z-index: 1;
+        z-index: 10;
         padding: 0;
         height: calc(100vh - 80px);
         overflow-y: scroll;
