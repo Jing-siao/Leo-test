@@ -31,125 +31,50 @@ let data = {
       title: '活動一',
       src: 'https://picsum.photos/seed/picsum/600/300',
       link: 'javascript:;',
+      notes: '次要說明次要說明次要說明',
     },
     {
       title: '活動二',
       src: "http://fakeimg.pl/600x300/282828/ccc/",
       link: 'javascript:;',
-
+      notes: '次要說明次要說明次要說明',
     },
     {
       title: '活動三',
       src: "http://fakeimg.pl/600x300/aaa/ccc/",
       link: 'javascript:;',
-
+      notes: '次要說明次要說明次要說明',
     },
     {
       title: '活動四',
       src: "http://fakeimg.pl/600x300/282828/ccc/",
       link: 'javascript:;',
-
+      notes: '次要說明次要說明次要說明',
     },
     {
       title: '活動五',
       src: "http://fakeimg.pl/600x300/bbb/ccc/",
       link: 'javascript:;',
-
+      notes: '次要說明次要說明次要說明',
     },
 
   ],
+  card: [
+    {
+      title: '好禮一',
+      src: "http://fakeimg.pl/600x300/aaa/ccc/",
+      link: 'javascript:;',
+    },
+    {
+      title: '好禮二',
+      src: "http://fakeimg.pl/600x300/aaa/ccc/",
+      link: 'javascript:;',
+    },
+    {
+      title: '好禮三',
+      src: "http://fakeimg.pl/600x300/aaa/ccc/",
+      link: 'javascript:;',
+    },
+  ],
 };
 
-let header = new Vue({
-  el: '#app',
-  data: data,
-  methods: {
-    active() {
-
-      $("button.hamburger").toggleClass("is-active");
-      $(".menu").slideToggle();
-
-    },
-  },
-  mounted() {
-    // rwd
-    // 一進來先判斷
-    if ($(window).width() < 720) {
-
-      $('.member span p').hide();
-    } else {
-      $('.member span p').show();
-    };
-    // resize再判斷一次
-    $(window).resize(function () {
-      if ($(window).width() < 720) {
-        $('.member span p').hide();
-      } else {
-        $('.member span p').show();
-      };
-
-    });
-  },
-});
-
-let banner = new Vue({
-  el: '#banner',
-  data: data,
-  computed: {
-    bannerIndex() {
-      return this.banner[this.index]
-    },
-    total() {
-      return this.banner.length
-    }
-  },
-  methods: {
-    changeIndex(change) {
-      let length = this.banner.length;
-      this.index = (this.index + change + length) % length;
-    }
-  },
-  mounted() {
-    //輪播
-    $('.slider').slick({
-      dots: true,
-      infinite: true,
-      arrows: true,
-      // speed: 300,
-      autoplaySpeed: 2000,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      responsive: [
-        // {
-        //   breakpoint: 1024,
-        //   settings: {
-        //     slidesToShow: 3,
-        //     slidesToScroll: 1,
-        //   }
-        // },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-          }
-        },
-      ]
-    });
-
-  },
-});
-; (function () {
-  new Vue({
-    el: "#footer",
-    data: {
-      copyright: 'All Rights Reserved.',
-      company: '台新國際商業銀行',
-      companyEn: 'Taishin International Bank.',
-      year: '©' + new Date().getFullYear(),
-
-
-    },
-  });
-})()

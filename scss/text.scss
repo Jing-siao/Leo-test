@@ -70,7 +70,7 @@ header {
 
       div.member {
         a {
-          border: 1px solid blue;
+          // border: 1px solid blue;
           display: inline-block;
           margin: 13px 0 0 15px;
 
@@ -111,7 +111,7 @@ header {
 
       button.hamburger {
         outline: none;
-        border: 1px solid black;
+        // border: 1px solid black;
         // font-size: 16px;
       }
 
@@ -124,11 +124,13 @@ header {
 }
 
 div.banner {
-  border: 1px solid rgb(219, 60, 60);
+  // border: 1px solid rgb(219, 60, 60);
+
 
   .slider {
+
     margin: 0 auto;
-    border: 1px solid snow;
+    // border: 1px solid snow;
 
     button.slick-prev {
       left: 2%;
@@ -145,17 +147,41 @@ div.banner {
     .pic {
       padding: 0;
 
+
       a {
-        border: 1px solid pink;
+        outline: none;
+        // border: 1px solid pink;
         display: inline-block;
         text-align: center;
         width: 100%;
         margin: 0 auto;
+        position: relative;
+
+        &:hover div.description {
+          transform: translateY(0%);
+        }
 
         img {
           width: 100%;
         }
+
+        .description {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background-color: hsla(0, 0%, 0%, .5);
+          font-size: .8rem;
+          color: white;
+          padding: 10px;
+          transform: translateY(100%);
+          transition: transform .5s;
+
+
+        }
       }
+
+
     }
 
   }
@@ -164,8 +190,75 @@ div.banner {
 
 }
 
+.main {
+  // border: 1px solid black;
+  margin-top: 80px;
+
+  .row {
+    .card {
+      border: 1px solid snow;
+      margin: 0 2%;
+      border-radius: 10px;
+      // height: 300px;
+      display: inline-block;
+
+      .imgWrap {
+        margin-top: 20px;
+        padding: 0;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .wrap {
+        text-align: center;
+        margin-top: 20px;
+
+        .circle {
+          background-color: snow;
+          display: inline-block;
+          padding: 8px;
+          border-radius: 50px;
+
+          i {
+            font-size: 26px;
+          }
+
+
+        }
+
+        p {
+          margin: 10px 0;
+        }
+      }
+
+    }
+  }
+}
+
+#go_top {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: none;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  outline: none;
+  cursor: pointer;
+}
+
 footer {
   // border: 1px solid black;
+  margin-top: 50px;
+  background-color: $grey;
+  padding: 10px;
   text-align: center;
 }
 
@@ -299,4 +392,22 @@ footer {
     }
   }
 
+}
+
+@media(max-width:576px) {
+  #go_top {
+    display: block;
+  }
+
+  .main {
+    .row {
+      .card {
+        &:first-child {
+          margin-top: 0;
+        }
+
+        margin-top: 20px;
+      }
+    }
+  }
 }

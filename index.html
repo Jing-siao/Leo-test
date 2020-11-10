@@ -62,8 +62,12 @@
       <div class="pic col-md-12" v-for="(item,i) in banner" :key="item.title">
         <a :href="item.link">
           <img :src="item.src" alt="">
-          <span class="number">{{i+1}}</span>
-          <p>{{item.title}}</p>
+          <div class="description">
+            <span class="number">{{i+1}}</span>
+            <p>{{item.title}}</p>
+            <p>{{item.notes}}</p>
+          </div>
+
         </a>
       </div>
 
@@ -71,11 +75,16 @@
 
   </div>
   <!-- 內文 -->
-  <div class="card">
+  <div class="main container" id="main">
+    <div class="row">
+      <card v-for="item in card" :item="item"></card>
+      <!-- <card></card>
+      <card></card> -->
+    </div>
 
   </div>
-
-
+  <!-- 頁面滑到最上方 -->
+  <button type="button" id="go_top" @click="toTop">↑</button>
   <!-- footer -->
   <footer>
     <div id="footer">
@@ -92,6 +101,7 @@
     crossorigin="anonymous"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
   <script src="./js/data.js"></script>
+  <script src="./js/vue.js"></script>
 </body>
 
 </html>
