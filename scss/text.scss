@@ -112,9 +112,27 @@ header {
       button.hamburger {
         outline: none;
         // border: 1px solid black;
-        // font-size: 16px;
+        margin-top: 15px;
+        height: 40px;
       }
 
+      .hamburger-box {
+        width: 30px;
+
+        .hamburger-inner {
+          width: 30px;
+
+          &::before {
+            width: 30px;
+
+          }
+
+          &::after {
+            width: 30px;
+
+          }
+        }
+      }
     }
 
 
@@ -339,7 +357,7 @@ footer {
         position: absolute;
         margin-left: -15px;
         top: 80px;
-        width: calc(100vw - 15px);
+        width: 100vw;
         z-index: 10;
         padding: 0;
         height: calc(100vh - 80px);

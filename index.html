@@ -77,9 +77,14 @@
   <!-- 內文 -->
   <div class="main container" id="main">
     <div class="row">
+      <h1>最新消息</h1>
+    </div>
+    <div class="row">
+      <h1>熱門兌換</h1>
       <card v-for="item in card" :item="item"></card>
-      <!-- <card></card>
-      <card></card> -->
+
+
+
     </div>
 
   </div>
@@ -88,7 +93,17 @@
   <!-- footer -->
   <footer>
     <div id="footer">
-      <p>{{company}} {{year}} {{companyEn}} {{copyright}}</p>
+      <div>
+        <ul>
+          <li>連結</li>
+          <li>連結</li>
+          <li>連結</li>
+          <li>連結</li>
+          <li>連結</li>
+          <li>連結</li>
+        </ul>
+      </div>
+      <p class="copyRight">{{company}} {{year}} {{companyEn}} {{copyright}}</p>
     </div>
 
   </footer>

@@ -53,8 +53,9 @@ let banner = new Vue({
       dots: true,
       infinite: true,
       arrows: true,
-      // speed: 300,
-      autoplaySpeed: 2000,
+      speed: 300,
+      autoplaySpeed: 3000,
+      autoplay: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       responsive: [
