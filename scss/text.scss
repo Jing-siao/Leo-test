@@ -395,6 +395,20 @@ footer {
 }
 
 @media(max-width:576px) {
+  div.banner {
+    .row {
+      .pic {
+        a {
+          .description {
+            display: block;
+            transform: translateY(0%);
+          }
+        }
+      }
+
+    }
+  }
+
   #go_top {
     display: block;
   }

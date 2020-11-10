@@ -293,6 +293,11 @@ footer {
 }
 
 @media (max-width: 576px) {
+  div.banner .row .pic a .description {
+    display: block;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
   #go_top {
     display: block;
   }
