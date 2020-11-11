@@ -3,7 +3,35 @@
 }
 
 body {
-  background-color: #486d6a;
+  background-color: #383838;
+}
+
+h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+h5 {
+  font-size: 20px;
+  margin: 8px;
+  text-align: start;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+p {
+  color: #aaa;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
 }
 
 header {
@@ -159,39 +187,111 @@ div.banner .slider .pic a .description {
   margin-top: 80px;
 }
 
-.main .row .card {
-  border: 1px solid snow;
-  margin: 0 2%;
-  border-radius: 10px;
+.main .announcement {
+  margin-top: 50px;
+}
+
+.main .announcement .wrap {
+  background-color: #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.main .announcement .wrap .news {
+  background-color: white;
+  padding: 10px;
+  margin: 30px;
+  position: relative;
+}
+
+.main .announcement .wrap .news div.more {
+  margin-top: 10px;
+  text-align: right;
+  display: block;
+}
+
+.main .announcement .wrap .news div.more a {
+  color: lightseagreen;
   display: inline-block;
 }
 
-.main .row .card .imgWrap {
+.main .gift {
+  margin-top: 50px;
+}
+
+.main .gift .row .card {
+  background-color: #ccc;
+  margin: 0 2%;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.main .gift .row .card .imgWrap {
   margin-top: 20px;
   padding: 0;
 }
 
-.main .row .card .imgWrap img {
+.main .gift .row .card .imgWrap img {
   width: 100%;
 }
 
-.main .row .card .wrap {
+.main .gift .row .card .wrap {
   text-align: center;
   margin-top: 20px;
 }
 
-.main .row .card .wrap .circle {
+.main .gift .row .card .wrap .circle {
   background-color: snow;
   display: inline-block;
   padding: 8px;
   border-radius: 50px;
 }
 
-.main .row .card .wrap .circle i {
+.main .gift .row .card .wrap .circle i {
   font-size: 26px;
 }
 
-.main .row .card .wrap p {
+.main .gift .row .card .wrap p {
+  margin: 10px 0;
+}
+
+.main .point {
+  margin-top: 50px;
+}
+
+.main .point .row .card {
+  background-color: #ccc;
+  margin: 0 2%;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.main .point .row .card .imgWrap {
+  margin-top: 20px;
+  padding: 0;
+}
+
+.main .point .row .card .imgWrap img {
+  width: 100%;
+}
+
+.main .point .row .card .wrap {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.main .point .row .card .wrap .circle {
+  background-color: snow;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 50px;
+}
+
+.main .point .row .card .wrap .circle i {
+  font-size: 26px;
+}
+
+.main .point .row .card .wrap p {
   margin: 10px 0;
 }
 

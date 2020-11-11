@@ -76,15 +76,42 @@
   </div>
   <!-- 內文 -->
   <div class="main container" id="main">
-    <div class="row">
+    <div class="announcement">
       <h1>最新消息</h1>
+      <div class="wrap">
+        <div class="news row" v-for="item in news">
+          <img :src="item.src" alt="" class="col-sm-5">
+          <div class="col-sm-7">
+
+            <h3>{{item.title}}</h3>
+            <p>{{item.content}}</p>
+            <p>
+              <i class="fas fa-check"></i>
+              {{item.contentMore}}
+            </p>
+            <div class="more align-self-end">
+
+              <a :href="item.link">
+                <i class="fas fa-chevron-right"></i>
+                了解更多</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="row">
+
+    <div class="gift">
+      <h1>好禮三重送</h1>
+      <div class="row">
+        <card v-for="item in card" :item="item"></card>
+      </div>
+    </div>
+    <div class="point">
       <h1>熱門兌換</h1>
-      <card v-for="item in card" :item="item"></card>
-
-
-
+      <div class="row">
+        <point v-for="item in point" :item="item"></point>
+      </div>
     </div>
 
   </div>

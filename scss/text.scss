@@ -3,12 +3,43 @@
 }
 
 body {
-  background-color: rgb(72, 109, 106);
+  background-color: rgb(56, 56, 56);
 }
 
 $grey:#ccc;
+$darkgrey:#aaa;
 
+h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 50px;
+  text-align: center;
+  // border: 1px solid black;
 
+}
+
+h5 {
+  font-size: 20px;
+  margin: 8px;
+  text-align: start;
+
+}
+
+h3 {
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+p {
+  color: $darkgrey;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+
+}
 
 header {
   background-color: lightgrey;
@@ -212,47 +243,134 @@ div.banner {
   // border: 1px solid black;
   margin-top: 80px;
 
-  .row {
-    .card {
-      border: 1px solid snow;
-      margin: 0 2%;
-      border-radius: 10px;
-      // height: 300px;
-      display: inline-block;
+  .announcement {
+    margin-top: 50px;
 
-      .imgWrap {
-        margin-top: 20px;
-        padding: 0;
+    .wrap {
+      background-color: $grey;
+      border-radius: 20px;
+      overflow: hidden;
+      // display: inline-block;
 
-        img {
-          width: 100%;
-        }
-      }
+      .news {
+        background-color: white;
+        padding: 10px;
+        margin: 30px;
+        position: relative;
 
-      .wrap {
-        text-align: center;
-        margin-top: 20px;
+        div.more {
+          // border: 1px solid black;
+          margin-top: 10px;
+          text-align: right;
+          display: block;
 
-        .circle {
-          background-color: snow;
-          display: inline-block;
-          padding: 8px;
-          border-radius: 50px;
 
-          i {
-            font-size: 26px;
+          a {
+            color: lightseagreen;
+            // border: 1px solid black;
+            display: inline-block;
+
           }
-
-
         }
 
-        p {
-          margin: 10px 0;
-        }
       }
-
     }
   }
+
+  .gift {
+    margin-top: 50px;
+
+    .row {
+      .card {
+        // border: 1px solid snow;
+        background-color: $grey;
+        margin: 0 2%;
+        border-radius: 20px;
+        // height: 300px;
+        display: inline-block;
+
+        .imgWrap {
+          margin-top: 20px;
+          padding: 0;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .wrap {
+          text-align: center;
+          margin-top: 20px;
+
+          .circle {
+            background-color: snow;
+            display: inline-block;
+            padding: 8px;
+            border-radius: 50px;
+
+            i {
+              font-size: 26px;
+            }
+
+
+          }
+
+          p {
+            margin: 10px 0;
+          }
+        }
+
+      }
+    }
+  }
+
+  .point {
+    margin-top: 50px;
+
+    .row {
+      .card {
+        // border: 1px solid snow;
+        background-color: $grey;
+        margin: 0 2%;
+        border-radius: 20px;
+        // height: 300px;
+        display: inline-block;
+
+        .imgWrap {
+          margin-top: 20px;
+          padding: 0;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .wrap {
+          text-align: center;
+          margin-top: 20px;
+
+          .circle {
+            background-color: snow;
+            display: inline-block;
+            padding: 8px;
+            border-radius: 50px;
+
+            i {
+              font-size: 26px;
+            }
+
+
+          }
+
+          p {
+            margin: 10px 0;
+          }
+        }
+
+      }
+    }
+  }
+
 }
 
 #go_top {

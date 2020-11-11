@@ -82,7 +82,7 @@ let banner = new Vue({
 Vue.component('card', {
   props: ['item'],
   template: `
-        <div class="col-sm card">
+      <div class="col-sm card">
         <div class="imgWrap col-sm-12">
           <img :src="item.src" alt="">
         </div>
@@ -91,9 +91,27 @@ Vue.component('card', {
             <i class="fas fa-gift"></i>
           </div>
           <p>{{item.title}}</p>
+          <h5>{{item.giftTitle}}</h5>
         </div>
 
       </div>
+  `,
+});
+Vue.component('point', {
+  props: ['item'],
+  template: `
+      <a :href="item.link" class="col-sm card">
+        <div class="imgWrap col-sm-12">
+          <img :src="item.src" alt="">
+        </div>
+        <div class="wrap">
+           <h5>{{item.title}}</h5>
+            <p>剩餘數量:{{item.total}}</p>
+            <p>兌換上限:{{item.limit}}</p>
+            <p>point:{{item.point}}點</p>
+        </div>
+
+      </a>
   `,
 });
 let main = new Vue({
