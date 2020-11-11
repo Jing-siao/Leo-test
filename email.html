@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/bootstrap-grid.min.css">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: rgb(39, 34, 65);
+    }
+
+    .container {
+      background-color: rgb(255, 194, 80);
+      padding: 20px;
+
+    }
+
+    section {
+      color: white;
+      text-align: center;
+    }
+
+    .title {
+      /* border: 1px solid black; */
+      text-align: center;
+    }
+
+    input {
+      padding: 5px;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      margin: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: rgb(39, 34, 65);
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .menu {
+      margin-top: 20px;
+      background-color: rgb(39, 34, 65);
+      display: inline-block;
+      color: white;
+      padding: 5px;
+      border-radius: 10px;
+    }
+
+    span {
+
+      padding: 5px;
+      margin: 5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    button.edit,
+    button.delete {
+      background-color: rgb(255, 194, 80);
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <section v-if="loading">Loading...</section>
+    <section v-else>
+      <div class="container">
+        <div class="title">
+          <div class="input" style="font-size: 0px;">
+            <input type="text" placeholder="會員名稱" v-model.trim="input.name">
+            <input type="text" placeholder="電子信箱" v-model.trim="input.email">
+            <button @click="submitHandler">送出</button>
+            <button @click="cancelHandler">取消</button>
+          </div>
+          <div class="menu">
+            <div class="menuItem" v-for="(item,index) in contacts">
+              <span class="number">{{item.id}}</span>
+              <span class="type">{{item.name}}</span>
+              <a :href="'mailto:'+item.email" target="vue-iron" class="title">
+                {{item.email}}
+              </a>
+              <button class="edit" @click="editHandler(index)">修改</button>
+              <button class="delete" @click="deleteHandler(index)">刪除</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js"></script>
+  <script>
+    // ; (function (Vue) {
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        loading: false,
+        contacts: [],
+        editIndex: null,
+        input: {
+          name: '',
+          email: ''
+        }
+      },
+      methods: {
+        submitHandler() {
+          //先解構
+          let { name, email } = this.input
+          //不等於空值
+          if (!name || !email) return
+          this.loading = true
+          if (this.editIndex === null) {
+            //新增
+            axios.post('http://localhost:8888/contact', this.input)
+              .then((res) => {
+                this.contacts.push(res.data);
+                this.loading = false;
+                //清空input
+                this.cancelHandler();
+              }).catch((err) => {
+                //如果失敗
+                console.log(err)
+              })
+          } else {
+            //修改
+            let id = this.contacts[this.editIndex].id
+            axios.put('http://localhost:8888/contact/' + id, this.input).then((res) => {
+              this.contacts[this.editIndex] = res.data
+              this.cancelHandler()
+              this.loading = false;
+            }).catch((err) => {
+              //如果失敗
+              console.log(err)
+            })
+          }
+
+
+        },
+        cancelHandler() {
+          this.editIndex = null
+          this.input.name = ''
+          this.input.email = ''
+        },
+        deleteHandler(index) {
+          let target = this.contacts[index]
+          //如果按是
+          if (confirm(`是否刪除 ${target.name} ? `)) {
+            this.loading = true
+            axios.delete('http://localhost:8888/contact/' + target.id)
+              .then((res) => {
+                //刪掉一筆
+                this.contacts.splice(index, 1)
+                this.loading = false
+              }).catch((err) => {
+                //如果失敗
+                console.log(err)
+              })
+          }
+        },
+        editHandler(index) {
+          let { name, email } = this.contacts[index]
+          this.editIndex = index
+          this.input = {
+            name, email
+          }
+        }
+      },
+      mounted() {
+        this.loading = true
+        axios.get('http://localhost:8888/contact').then((res) => {
+
+          //用箭頭函式 因為希望這裡的this對上外面的Vue實體,不要自己產生this
+
+          //先console看看物件裡面是甚麼
+          console.log(res)
+
+          this.contacts = res.data
+          this.loading = false
+        }).catch((err) => {
+          //有錯誤時
+          console.log(err)
+        })
+      }
+
+    })
+    // })
+  </script>
+</body>
+
+</html>

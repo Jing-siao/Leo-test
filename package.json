@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "json": "json-server --watch db.json --port 8888"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jing-siao/Leo-test.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "jing",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jing-siao/Leo-test/issues"
   },
