@@ -15,9 +15,13 @@ h1 {
 }
 
 h5 {
+  color: black;
   font-size: 20px;
-  margin: 8px;
+  margin: 8px 0;
   text-align: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 h3 {
@@ -26,7 +30,7 @@ h3 {
 }
 
 p {
-  color: #aaa;
+  color: #686868;
   padding: 5px;
 }
 
@@ -259,11 +263,21 @@ div.banner .slider .pic a .description {
   margin-top: 50px;
 }
 
+.main .point .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .main .point .row .card {
   background-color: #ccc;
   margin: 0 2%;
   border-radius: 20px;
+  width: 40%;
   display: inline-block;
+  padding: 0 15px;
 }
 
 .main .point .row .card .imgWrap {
@@ -280,19 +294,19 @@ div.banner .slider .pic a .description {
   margin-top: 20px;
 }
 
-.main .point .row .card .wrap .circle {
-  background-color: snow;
-  display: inline-block;
-  padding: 8px;
-  border-radius: 50px;
-}
-
-.main .point .row .card .wrap .circle i {
-  font-size: 26px;
-}
-
 .main .point .row .card .wrap p {
-  margin: 10px 0;
+  margin: 2px 0;
+  padding: 2px;
+  color: #686868;
+  text-align: left;
+}
+
+.main .point .row .card .wrap p:last-child {
+  margin-bottom: 10px;
+}
+
+.main .point .row .card .wrap p:nth-child(2) {
+  margin-top: 10px;
 }
 
 #go_top {
@@ -310,13 +324,46 @@ div.banner .slider .pic a .description {
   line-height: 1;
   outline: none;
   cursor: pointer;
+  z-index: 1;
 }
 
 footer {
   margin-top: 50px;
   background-color: #ccc;
-  padding: 10px;
+  padding: 10px 0;
   text-align: center;
+}
+
+footer ul {
+  display: inline-block;
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer ul a {
+  padding: 0 !important;
+  text-align: center;
+  margin: 0 10px;
+}
+
+footer ul a li {
+  display: inline-block;
+  padding: 2px 5px;
+  width: 100%;
+  color: #686868;
+}
+
+footer ul a li:hover {
+  color: black;
+}
+
+footer p {
+  margin-top: 5px;
 }
 
 @media (min-width: 1141px) {
@@ -419,11 +466,20 @@ footer {
   #go_top {
     display: block;
   }
-  .main .row .card {
+  .main .gift .row .card {
     margin-top: 20px;
   }
-  .main .row .card:first-child {
+  .main .gift .row .card:first-child {
     margin-top: 0;
+  }
+  .main .point .row .card {
+    margin-bottom: 20px;
+  }
+  footer ul a {
+    margin: 5px 0;
+  }
+  footer ul a li {
+    padding: 8px 0;
   }
 }
 /*# sourceMappingURL=text.css.map */

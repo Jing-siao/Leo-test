@@ -100,12 +100,12 @@ Vue.component('card', {
 Vue.component('point', {
   props: ['item'],
   template: `
-      <a :href="item.link" class="col-sm card">
+      <a :href="item.link" class="col-md card">
         <div class="imgWrap col-sm-12">
           <img :src="item.src" alt="">
         </div>
         <div class="wrap">
-           <h5>{{item.title}}</h5>
+            <h5>{{item.title}}</h5>
             <p>剩餘數量:{{item.total}}</p>
             <p>兌換上限:{{item.limit}}</p>
             <p>point:{{item.point}}點</p>
@@ -134,10 +134,40 @@ let toTop = new Vue({
 ; (function () {
   new Vue({
     el: "#footer",
-    data: {
+    data:
+
+    {
+      footer:
+        [
+
+          {
+            title: '活動辦法',
+            link: 'javascript:;',
+          },
+          {
+            title: '兌換專區',
+            link: 'javascript:;',
+          },
+          {
+            title: '常見問題',
+            link: 'javascript:;',
+          },
+          {
+            title: '會員專區',
+            link: 'javascript:;',
+          },
+          {
+            title: '卡友專區',
+            link: 'javascript:;',
+          },
+          {
+            title: '交通優惠',
+            link: 'javascript:;',
+          },
+        ],
       copyright: 'All Rights Reserved.',
-      company: '台新國際商業銀行',
-      companyEn: 'Taishin International Bank.',
+      company: '國眾國際商業銀行',
+      companyEn: 'LEO International Bank.',
       year: '©' + new Date().getFullYear(),
 
 

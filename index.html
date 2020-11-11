@@ -119,17 +119,15 @@
   <button type="button" id="go_top" @click="toTop">↑</button>
   <!-- footer -->
   <footer>
-    <div id="footer">
-      <div>
-        <ul>
-          <li>連結</li>
-          <li>連結</li>
-          <li>連結</li>
-          <li>連結</li>
-          <li>連結</li>
-          <li>連結</li>
-        </ul>
-      </div>
+    <div id="footer" class="container">
+
+      <ul class="row">
+        <a v-for="item in footer" :href="item.link" class="col-md col-sm-5">
+          <li>{{item.title}}</li>
+        </a>
+
+      </ul>
+
       <p class="copyRight">{{company}} {{year}} {{companyEn}} {{copyright}}</p>
     </div>
 
