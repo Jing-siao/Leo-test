@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+}
+
+* [v-cloak] {
+  display: none;
+}
+
+h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+h5 {
+  color: black;
+  font-size: 20px;
+  margin: 8px 0;
+  text-align: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+p {
+  color: #686868;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #383838;
+}
+
+input {
+  padding: 5px 0;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  padding: 10px 0;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+button a {
+  color: black;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #ccc;
+  padding: 10px 0;
+  text-align: center;
+}
+
+footer ul {
+  display: inline-block;
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer ul a {
+  padding: 0 !important;
+  text-align: center;
+  margin: 0 10px;
+}
+
+footer ul a li {
+  display: inline-block;
+  padding: 2px 5px;
+  width: 100%;
+  color: #686868;
+}
+
+footer ul a li:hover {
+  color: black;
+}
+
+footer p {
+  margin-top: 5px;
+}
+
+@media (max-width: 576px) {
+  footer ul a {
+    margin: 5px 0;
+  }
+  footer ul a li {
+    padding: 8px 0;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

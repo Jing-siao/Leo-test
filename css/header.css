@@ -1,0 +1,259 @@
+* {
+  padding: 0;
+}
+
+* [v-cloak] {
+  display: none;
+}
+
+h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+h5 {
+  color: black;
+  font-size: 20px;
+  margin: 8px 0;
+  text-align: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+p {
+  color: #686868;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #383838;
+}
+
+input {
+  padding: 5px 0;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  padding: 10px 0;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+button a {
+  color: black;
+}
+
+header {
+  background-color: lightgrey;
+  width: 100%;
+  padding: 6px 0;
+  height: 85px;
+}
+
+header div.header {
+  margin: 0 auto;
+  width: 100%;
+}
+
+header div.header div.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-height: 70px;
+}
+
+header div.header div.col #logo {
+  display: inline-block;
+  height: 68px;
+}
+
+header div.header div.col #logo a {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+}
+
+header div.header div.col #logo a img {
+  height: 100%;
+  width: auto;
+}
+
+header div.header div.col ul.menu a li {
+  color: #686868;
+  display: inline-block;
+}
+
+header div.header div.col ul.menu a li:hover {
+  border-bottom: 3px solid #686868;
+}
+
+header div.header div.col div.member a {
+  display: inline-block;
+  margin: 13px 0 0 15px;
+  text-decoration: none;
+}
+
+header div.header div.col div.member a span {
+  border: 2px solid #686868;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  line-height: 30px;
+}
+
+header div.header div.col div.member a span i {
+  display: inline-block;
+  font-size: 30px;
+  line-height: 40px;
+  color: #686868;
+  vertical-align: top;
+}
+
+header div.header div.col div.member a span p {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: top;
+}
+
+header div.header div.col button.hamburger {
+  outline: none;
+  margin-top: 15px;
+  height: 40px;
+}
+
+header div.header div.col .hamburger-box {
+  width: 30px;
+}
+
+header div.header div.col .hamburger-box .hamburger-inner {
+  width: 30px;
+}
+
+header div.header div.col .hamburger-box .hamburger-inner::before {
+  width: 30px;
+}
+
+header div.header div.col .hamburger-box .hamburger-inner::after {
+  width: 30px;
+}
+
+@media (min-width: 1141px) {
+  .header {
+    width: 95%;
+  }
+  .header div.col {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-height: 70px;
+  }
+  .header div.col ul.menu {
+    display: inline-block !important;
+  }
+  .header div.col ul.menu a {
+    margin: 0 5px;
+    line-height: 66px;
+    display: inline-block;
+  }
+  .header div.col ul.menu a li {
+    display: inline-block;
+    padding: 0 15px;
+  }
+  .header div.col div.member {
+    display: inline-block;
+  }
+  .header div.col button.hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 1140px) {
+  .header {
+    width: 100%;
+  }
+  .header div.col {
+    display: block;
+    height: 100vh;
+    position: relative;
+  }
+  .header div.col #logo {
+    display: inline-block;
+    height: 68px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .header div.col #logo a {
+    display: inline-block;
+    height: 100%;
+    width: auto;
+  }
+  .header div.col #logo a img {
+    height: 100%;
+  }
+  .header div.col ul.menu {
+    display: none;
+    position: absolute;
+    margin-left: -15px;
+    top: 80px;
+    width: 100vw;
+    z-index: 10;
+    padding: 0;
+    height: calc(100vh - 80px);
+    overflow-y: scroll;
+    background-color: lightgrey;
+  }
+  .header div.col ul.menu::-webkit-scrollbar {
+    display: none;
+  }
+  .header div.col ul.menu a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+  .header div.col ul.menu a li {
+    padding: 15px;
+    width: 100%;
+    background-color: lightgrey;
+  }
+  .header div.col div.member a span p {
+    display: none;
+  }
+  .header div.col button.hamburger {
+    display: inline-block;
+    padding: 0 5px;
+  }
+}
+/*# sourceMappingURL=header.css.map */

@@ -172,5 +172,25 @@ let toTop = new Vue({
 
 
     },
+    mounted() {
+
+      // rwd
+      // 一進來先判斷
+      if ($(window).width() < 720) {
+
+        $('footer ul').hide();
+      } else {
+        $('footer ul').show();
+      };
+      // resize再判斷一次
+      $(window).resize(function () {
+        if ($(window).width() < 720) {
+          $('footer ul').hide();
+        } else {
+          $('footer ul').show();
+        };
+
+      });
+    },
   });
 })()

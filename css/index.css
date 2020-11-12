@@ -1,0 +1,277 @@
+* {
+  padding: 0;
+}
+
+* [v-cloak] {
+  display: none;
+}
+
+h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+h5 {
+  color: black;
+  font-size: 20px;
+  margin: 8px 0;
+  text-align: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+p {
+  color: #686868;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #383838;
+}
+
+input {
+  padding: 5px 0;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  padding: 10px 0;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+button a {
+  color: black;
+}
+
+div.banner .slider {
+  margin: 0 auto;
+}
+
+div.banner .slider button.slick-prev {
+  left: 2%;
+  z-index: 1;
+}
+
+div.banner .slider button.slick-next {
+  right: 2%;
+}
+
+div.banner .slider .pic {
+  padding: 0;
+}
+
+div.banner .slider .pic a {
+  outline: none;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+div.banner .slider .pic a:hover div.description {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+div.banner .slider .pic a img {
+  width: 100%;
+}
+
+div.banner .slider .pic a .description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: .8rem;
+  color: white;
+  padding: 10px;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+.main {
+  margin-top: 80px;
+}
+
+.main .announcement {
+  margin-top: 50px;
+}
+
+.main .announcement .wrap {
+  background-color: #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.main .announcement .wrap .news {
+  background-color: white;
+  padding: 10px;
+  margin: 30px;
+  position: relative;
+}
+
+.main .announcement .wrap .news div.more {
+  margin-top: 10px;
+  text-align: right;
+  display: block;
+}
+
+.main .announcement .wrap .news div.more a {
+  color: lightseagreen;
+  display: inline-block;
+}
+
+.main .gift {
+  margin-top: 50px;
+}
+
+.main .gift .row .card {
+  background-color: #ccc;
+  margin: 0 2%;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.main .gift .row .card .imgWrap {
+  margin-top: 20px;
+  padding: 0;
+}
+
+.main .gift .row .card .imgWrap img {
+  width: 100%;
+}
+
+.main .gift .row .card .wrap {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.main .gift .row .card .wrap .circle {
+  background-color: snow;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 50px;
+}
+
+.main .gift .row .card .wrap .circle i {
+  font-size: 26px;
+}
+
+.main .gift .row .card .wrap p {
+  margin: 10px 0;
+}
+
+.main .point {
+  margin-top: 50px;
+}
+
+.main .point .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main .point .row .card {
+  background-color: #ccc;
+  margin: 0 2%;
+  border-radius: 20px;
+  width: 40%;
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.main .point .row .card .imgWrap {
+  margin-top: 20px;
+  padding: 0;
+}
+
+.main .point .row .card .imgWrap img {
+  width: 100%;
+}
+
+.main .point .row .card .wrap {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.main .point .row .card .wrap p {
+  margin: 2px 0;
+  padding: 2px;
+  color: #686868;
+  text-align: left;
+}
+
+.main .point .row .card .wrap p:last-child {
+  margin-bottom: 10px;
+}
+
+.main .point .row .card .wrap p:nth-child(2) {
+  margin-top: 10px;
+}
+
+#go_top {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: none;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  outline: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@media (max-width: 576px) {
+  div.banner .row .pic a .description {
+    display: block;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  #go_top {
+    display: block;
+  }
+  .main .gift .row .card {
+    margin-top: 20px;
+  }
+  .main .gift .row .card:first-child {
+    margin-top: 0;
+  }
+  .main .point .row .card {
+    margin-bottom: 20px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

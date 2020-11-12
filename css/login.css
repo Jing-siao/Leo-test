@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+}
+
+* [v-cloak] {
+  display: none;
+}
+
+h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+h5 {
+  color: black;
+  font-size: 20px;
+  margin: 8px 0;
+  text-align: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+p {
+  color: #686868;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #383838;
+}
+
+input {
+  padding: 5px 0;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  padding: 10px 0;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+button a {
+  color: black;
+}
+
+.main {
+  margin-top: 30px;
+}
+
+.main .login {
+  height: calc(100vh - 230px);
+}
+
+.main .login .wrap {
+  background-color: #ccc;
+  max-width: 550px;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.main .login .wrap .logoWrap {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main .login .wrap .logoWrap img {
+  width: 50%;
+  height: auto;
+}
+
+.main .login .wrap .account {
+  text-align: center;
+}
+
+.main .login .wrap .account label {
+  display: inline-block;
+  width: 100%;
+}
+
+.main .login .wrap .account label p {
+  display: inline-block;
+  padding: 0;
+}
+
+.main .login .wrap .account label .refresh {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.main .login .wrap .account div.button {
+  margin: 10px 0;
+}
+
+.main .login .wrap .account .forgetPassword a {
+  color: #a50202;
+}
+
+@media (min-width: 577px) {
+  .account label {
+    margin: 10px 0;
+  }
+  .account label p {
+    text-align: end;
+  }
+  .account label .refresh {
+    display: inline-block;
+    text-align: right;
+    margin-top: 10px;
+  }
+  .account label .refresh img {
+    vertical-align: bottom;
+  }
+  .account label .refresh i {
+    vertical-align: bottom;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .login {
+    display: inline-block;
+  }
+  .login .wrap {
+    display: inline-block;
+  }
+  .login .wrap .account label {
+    margin: 5px 0;
+  }
+  .login .wrap .account label p {
+    text-align: start;
+  }
+  .login .wrap .account label input {
+    margin-top: 5px;
+  }
+}
+/*# sourceMappingURL=login.css.map */

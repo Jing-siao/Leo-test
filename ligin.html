@@ -5,10 +5,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./bootstrap/bootstrap-grid.min.css">
+  <link href="./bootstrap/hamburgers.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <body>
+  <!-- 導覽列 -->
+  <header>
+    <div class="container-fluid">
+      <div class="row header" id="app" v-cloak>
+        <div class="col">
+          <!-- 漢堡按鈕 -->
+          <button class="hamburger hamburger--squeeze" type="button" @click="active">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+          <div id="logo">
+            <a href="./index.html">
+              <img src="./img/logo.png" alt="logo">
+            </a>
 
+          </div>
+          <ul class="menu">
+            <a v-for="item in menu" :href="item.link">
+              <li>{{item.title}}</li>
+            </a>
+          </ul>
+          <div class="member">
+            <a href="./ligin.html">
+              <span>
+                <i class="fas fa-user-circle"></i>
+                <p>登入 / 註冊</p>
+
+              </span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- 內文 -->
+  <div class="main container" id="main" v-cloak>
+    <div class="login">
+      <div class="wrap">
+
+        <div class="logoWrap">
+          <img src="./img/logo.png" alt="">
+        </div>
+        <div class="account">
+          <!-- <div> -->
+          <label for="">
+            <p class="col-sm-2 col-8">身分證字號</p>
+            <input type="text" class="col-sm-6 col-8" placeholder="例:A123456789">
+          </label>
+          <!-- </div> -->
+
+
+          <label for="">
+            <p class="col-sm-2 col-8">使用者代號</p>
+            <input type="text" class="col-sm-6 col-8" placeholder="請輸入8-12碼">
+          </label>
+          <label for="">
+            <p class="col-sm-2 col-8">密碼</p>
+            <input type="password" class="col-sm-6 col-8" placeholder="請輸入8-12碼">
+          </label>
+          <label for="">
+            <p class="col-sm-2 col-8">驗證碼</p>
+            <input type="text" class="col-sm-6 col-8" placeholder="注意大小寫有分">
+            <div class="refresh col-sm-10 col-8">
+              <img src="./img/passcode.png" alt="">
+              <i class="fas fa-sync">刷新驗證碼</i>
+            </div>
+
+          </label>
+          <div class="button">
+            <button class="col-4">
+              <a href="javascript:;">立即註冊</a>
+            </button>
+            <button type="submit" class="col-4">登入</button>
+          </div>
+          <div class="forgetPassword">
+            <a href="javascript:;">忘記密碼?</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div id="footer" class="container" v-cloak>
+
+      <ul class="row">
+        <a v-for="item in footer" :href="item.link" class="col-md col-sm-5">
+          <li>{{item.title}}</li>
+        </a>
+
+      </ul>
+
+      <p class="copyRight">{{company}} {{year}} {{companyEn}} {{copyright}}</p>
+    </div>
+
+  </footer>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+  <script src="https://kit.fontawesome.com/d18b20bddd.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+    integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+    crossorigin="anonymous"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/vue.js"></script>
 </body>
 
 </html>

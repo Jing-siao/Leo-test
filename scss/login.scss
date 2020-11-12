@@ -1,0 +1,128 @@
+@import "./_public.scss";
+
+.main {
+  // border: 1px solid black;
+  margin-top: 30px;
+
+  .login {
+    // display: inline-block;
+    height: calc(100vh - 230px);
+    // border: 1px solid rgb(216, 18, 18);
+
+    .wrap {
+      background-color: $grey;
+      // display: inline-block;
+      max-width: 550px;
+      margin: 0 auto;
+      border-radius: 15px;
+      padding: 15px;
+
+      .logoWrap {
+        // border: 1px solid black;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+
+        img {
+          width: 50%;
+          height: auto;
+        }
+      }
+
+      .account {
+        // border: 1px solid black;
+        text-align: center;
+
+        label {
+          display: inline-block;
+
+          // border: 1px solid rgb(194, 55, 55);
+          width: 100%;
+
+          p {
+            display: inline-block;
+            // border: 1px solid black;
+            // text-align: end;
+            padding: 0;
+          }
+
+          .refresh {
+            // border: 1px solid black;
+            display: inline-block;
+            // text-align: left;
+            margin-top: 10px;
+          }
+        }
+
+        div.button {
+          // border: 1px solid black;
+          margin: 10px 0;
+        }
+
+        .forgetPassword {
+          a {
+            color: rgb(165, 2, 2);
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:577px) {
+  .account {
+
+    label {
+      margin: 10px 0;
+
+      p {
+        text-align: end;
+      }
+
+      .refresh {
+        // border: 1px solid black;
+        display: inline-block;
+        text-align: right;
+        margin-top: 10px;
+
+        img {
+          // border: 1px solid black;
+          vertical-align: bottom;
+        }
+
+        i {
+          // border: 1px solid black;
+          vertical-align: bottom;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:576px) {
+  .login {
+    display: inline-block;
+
+
+    .wrap {
+      display: inline-block;
+
+      .account {
+
+        label {
+          margin: 5px 0;
+
+          p {
+            text-align: start;
+          }
+
+          input {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
